@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <sdf version="1.5">
-  <model name="Boxes large on pallet">
+  <model name="BoxesLargeOnPallet">
     <static>true</static>
     <link name="link">
       <collision name="collision">

@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <sdf version="1.5">
-  <model name="Mailbox">
+  <model name="mailbox">
     <link name="link">
       <collision name="collision">
         <geometry>

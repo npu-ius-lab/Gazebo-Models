@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <sdf version="1.5">
-  <model name="Construction Cone Small">
+  <model name="construction_cone_small">
     <link name="link">
       <inertial>
     <mass>1.500</mass>

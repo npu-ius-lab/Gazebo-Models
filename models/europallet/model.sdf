@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <sdf version="1.5">
-  <model name="EuroPallet">
+  <model name="europallet">
     <!-- Rises the pallet above the ground -->
     <pose>0 0 0.0635  0 0 0</pose>
 	

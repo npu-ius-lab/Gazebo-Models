@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <sdf version="1.5">
-  <model name="Shelves high 2 - no collision">
+  <model name="shelves_high2_no_collision">
     <static>true</static>
     <link name="link">
       <visual name="visual">

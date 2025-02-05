@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <sdf version="1.5">
-  <model name="truss">
+  <model name="drc_practice_truss">
     <link name="link">
       <inertial>
         <mass>20.7307</mass>

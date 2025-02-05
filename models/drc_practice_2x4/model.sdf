@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <sdf version="1.5">
-  <model name="lumber_2x4x48">
+  <model name="drc_practice_2x4">
     <link name="link">
       <inertial>
         <mass>1.4111</mass>

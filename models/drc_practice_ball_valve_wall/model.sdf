@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <sdf version="1.5">
-  <model name="ball_valve_wall">
+  <model name="drc_practice_ball_valve_wall">
     <include>
       <uri>model://drc_practice_valve_wall</uri>
       <name>wall</name>

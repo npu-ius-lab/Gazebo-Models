@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <sdf version="1.5">
-  <model name="hammer pein">
+  <model name="hammer_pein">
     <link name="link">
 	<inertial>
 	  <mass>0.500</mass>

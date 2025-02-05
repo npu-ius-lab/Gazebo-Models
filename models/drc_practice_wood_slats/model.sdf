@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <sdf version="1.5">
-  <model name="wood_slats">
+  <model name="drc_practice_wood_slats">
     <static>true</static>
     <link name="link">
       <collision name="collision">

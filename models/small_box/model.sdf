@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <sdf version="1.5">
-  <model name="small box">
+  <model name="small_box">
     <pose>0 0 0.09  0 0 0</pose>
     <static>false</static>
     <link name="link">

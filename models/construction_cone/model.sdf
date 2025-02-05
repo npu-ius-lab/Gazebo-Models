@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <sdf version="1.5">
-  <model name="Construction Cone">
+  <model name="construction_cone">
     <link name="link">
       <collision name="collision">
         <geometry>

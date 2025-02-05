@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <sdf version="1.5">
-  <model name="soccer_ball">
+  <model name="robocup_3Dsim_ball">
     <static>false</static>
     <link name="soccer_ball_link">
       <pose>0 0 0 0 0 0</pose>

@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <sdf version="1.5">
-  <model name="ball_valve">
+  <model name="drc_practice_ball_valve">
     <link name="handle">
       <pose>0 0.0275 0.02222 -1.5708 3.1415 0</pose>
       <inertial>

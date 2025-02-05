@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <sdf version="1.5">
-  <model name="Starting Pen">
+  <model name="starting_pen">
     <static>true</static>
     <link name="link">
       <collision name="wall_01">

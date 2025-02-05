@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <sdf version="1.5">
-  <model name="handle_wheel_valve">
+  <model name="drc_practice_handle_wheel_valve">
     <link name="handle">
       <inertial>
         <pose>0.03 0 0.01 0 0 0</pose>

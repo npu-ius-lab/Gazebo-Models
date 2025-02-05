@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <sdf version="1.5">
-  <model name="ladder">
+  <model name="drc_practice_ladder">
     <static>true</static>
     <link name="link">
       <collision name="step0">

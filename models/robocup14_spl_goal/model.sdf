@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <sdf version="1.5">
-  <model name="RoboCup 2014 SPL Goal">
+  <model name="robocup14_spl_goal">
     <static>true</static>
     <link name="left_post">
       <pose>0 0.8 0.45 0 0 0</pose>

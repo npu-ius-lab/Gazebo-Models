@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <sdf version="1.5">
-  <model name="block_wall">
+  <model name="drc_practice_block_wall">
     <pose>0 0 0.30924 0 0 0</pose>
     <static>true</static>
     <link name="blocks">

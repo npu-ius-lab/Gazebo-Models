@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <sdf version="1.6">
-  <model name="heightmap">
+  <model name="winding_valley_heightmap">
     <static>true</static>
     <link name="link">
       <collision name="collision">

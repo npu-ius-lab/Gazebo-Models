@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <sdf version="1.5">
-  <model name="lumber_2x6x48">
+  <model name="drc_practice_2x6">
     <link name="link">
       <self_collide>false</self_collide>
       <inertial>

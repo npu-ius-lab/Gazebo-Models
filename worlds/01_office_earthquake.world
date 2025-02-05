@@ -35,6 +35,7 @@
       <elevation>0</elevation>
       <heading_deg>0</heading_deg>
     </spherical_coordinates>
+
     <model name='ground_plane'>
       <static>1</static>
       <link name='link'>
@@ -71,10 +72,10 @@
             </plane>
           </geometry>
           <material>
-            <script>
+            <!--<script>
               <uri>file://media/materials/scripts/gazebo.material</uri>
               <name>Gazebo/Grey</name>
-            </script>
+            </script> -->
           </material>
         </visual>
         <velocity_decay>
@@ -86,9 +87,11 @@
         <gravity>1</gravity>
       </link>
     </model>
+
     <gravity>0 0 -9.8</gravity>
     <magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>
     <atmosphere type='adiabatic'/>
+
     <model name='desk_drawer'>
       <link name='link_5'>
         <pose frame=''>-17.2782 -14.8666 0 0 -0 0</pose>
@@ -187,6 +190,7 @@
       <allow_auto_disable>1</allow_auto_disable>
       <pose frame=''>5.37523 -7.51369 0 0 -0 0</pose>
     </model>
+
     <model name='desk_drawer_clone'>
       <link name='link_5'>
         <pose frame=''>-17.2782 -14.8666 0 0 -0 0</pose>
@@ -285,6 +289,7 @@
       <allow_auto_disable>1</allow_auto_disable>
       <pose frame=''>5.78905 -8.91128 0 0 -0 1.55496</pose>
     </model>
+
     <model name='desk_drawer_clone_clone'>
       <link name='link_5'>
         <pose frame=''>-17.2782 -14.8666 0 0 -0 0</pose>
@@ -36627,7 +36632,7 @@
             <script>
               <uri>model://door_3d/materials/scripts</uri>
               <uri>model://door_3d/materials/textures</uri>
-              <name>door_3d</name>
+              <name>door_3d_1</name>
             </script>
           </material>
           <cast_shadows>1</cast_shadows>
@@ -37503,7 +37508,7 @@
             <script>
               <uri>model://door_3d/materials/scripts</uri>
               <uri>model://door_3d/materials/textures</uri>
-              <name>door_3d</name>
+              <name>door_3d_2</name>
             </script>
           </material>
           <cast_shadows>1</cast_shadows>
@@ -38640,7 +38645,7 @@
             <script>
               <uri>model://door_3d/materials/scripts</uri>
               <uri>model://door_3d/materials/textures</uri>
-              <name>door_3d</name>
+              <name>door_3d_3</name>
             </script>
           </material>
           <cast_shadows>1</cast_shadows>

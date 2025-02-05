@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <sdf version="1.5">
-  <model name="Construction Barrel">
+  <model name="construction_barrel">
     <link name="link">
       <inertial>
         <pose>0 0 0.4 0 0 0</pose>

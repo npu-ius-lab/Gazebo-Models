@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <sdf version="1.5">
-  <model name="Fast Food">
+  <model name="fast_food">
     <static>true</static>
     <link name="link">
       <pose>0 0 3.15931296 0 0 0</pose>

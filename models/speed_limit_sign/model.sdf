@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <sdf version="1.5">
-  <model name="Speed limit">
+  <model name="speed_limit_sign">
     <static>true</static>
     <link name="link">
       <collision name="collision">

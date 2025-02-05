@@ -1,5 +1,5 @@
 <sdf version="1.5">
-  <model name="r2">
+  <model name="robonaut">
     <link name="/r2/robot_world">
       <pose>0 0 0 0 -0 0</pose>
       <inertial>

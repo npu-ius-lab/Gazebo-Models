@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <sdf version="1.5">
-  <model name="monkey wrench">
+  <model name="monkey_wrench">
     <static>false</static>
     <link name="link">
       <pose>0 0 0 0 0 0</pose>
