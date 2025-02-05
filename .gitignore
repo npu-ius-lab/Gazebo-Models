@@ -1,3 +1,7 @@
-**
-!models/
-!worlds/
+cmake/
+external/
+include/
+msgs/
+scripts/
+src/
+unit_tests/
