@@ -1,9 +1,3 @@
-Build/
-build/
-scripts/schemas
-.DS_Store
-*~
-models/iris/*.sdf
-*.pyc
-.*.sw?
-*-gen.sdf
+*
+!models/
+!worlds/
