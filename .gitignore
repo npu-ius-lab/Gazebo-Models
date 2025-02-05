@@ -5,3 +5,6 @@ msgs/
 scripts/
 src/
 unit_tests/
+*.txt
+*.md
+package.xml
