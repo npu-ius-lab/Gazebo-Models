@@ -5,5 +5,4 @@ msgs/
 scripts/
 src/
 unit_tests/
-*.txt
 package.xml

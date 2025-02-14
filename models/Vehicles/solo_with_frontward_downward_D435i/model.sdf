@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name='01_solo_Front_Down_D435i'>
+    <include>
+      <uri>model://solo</uri>
+    </include>
+
+   <include>
+      <uri>model://realsense_camera</uri>
+      <pose>0.14 0 0 1.57 0 1.57</pose>
+    </include>
+    
+    <joint name="realsense_camera_joint" type="fixed">
+      <child>realsense_camera::camera_link</child>
+      <parent>solo::base_link</parent>
+      <axis>
+        <xyz>0 0 0</xyz>
+        <limit>
+          <upper>0</upper>
+          <lower>0</lower>
+        </limit>
+      </axis>
+    </joint>
+    
+    <!-- Repeating the use of the same Gazebo plugin can result in identical data between two models, 
+    so the second D435i camera was actually simulated using Kinect's plugin.-->
+    
+    <include>
+      <uri>model://realsense_camera_2</uri>
+      <pose>0 0 -0.05 3.14 0 1.57</pose>
+    </include>
+    
+    <joint name="realsense_camera_joint_2" type="fixed">
+      <child>realsense_camera_2::camera_link</child>
+      <parent>solo::base_link</parent>
+      <axis>
+        <xyz>0 0 0</xyz>
+        <limit>
+          <upper>0</upper>
+          <lower>0</lower>
+        </limit>
+      </axis>
+    </joint>
+    
+
+  </model>
+</sdf>
