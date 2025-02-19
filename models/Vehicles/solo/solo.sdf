@@ -352,13 +352,23 @@
     </joint>
     <include>
       <uri>model://gps</uri>
-      <pose>0.1 0 0 0 0 0</pose>
+      <pose>0 0 0 0 0 0</pose>
       <name>gps</name>
     </include>
     <joint name='gps_joint' type='fixed'>
       <child>gps::link</child>
       <parent>base_link</parent>
     </joint>
+    
+    <plugin name="gps" filename="libhector_gazebo_ros_gps.so">  
+      <updateRate>10.0</updateRate>  
+      <topicName>sensor_msgs/NavSatFix</topicName>  
+      <gaussianNoise>0.0 0.0 0.0</gaussianNoise>  
+      <offset>0 0 0</offset>  
+      <velocityGaussianNoise>0 0 0</velocityGaussianNoise>  
+      <frameId>gps::link</frameId>  
+    </plugin>  
+
     <plugin name='rosbag' filename='libgazebo_multirotor_base_plugin.so'>
       <robotNamespace></robotNamespace>
       <linkName>base_link</linkName>

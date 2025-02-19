@@ -33,8 +33,8 @@
         <update_rate>5.0</update_rate>
         <always_on>true</always_on>
         <visualize>false</visualize>
-        <!-- GpsSensor noise currently not used -->
-        <!-- <gps>
+        <!-- GpsSensor noise currently  used -->
+        <gps>
           <position_sensing>
             <horizontal>
               <noise type="gaussian_quantized">
@@ -75,7 +75,7 @@
               </noise>
             </vertical>
           </velocity_sensing>
-        </gps> -->
+        </gps>
         <plugin name="gps_plugin" filename="libgazebo_gps_plugin.so">
           <robotNamespace></robotNamespace>
           <gpsNoise>true</gpsNoise>

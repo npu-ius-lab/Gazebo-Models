@@ -22,8 +22,9 @@
       </axis>
     </joint>
     
+    
     <!-- Repeating the use of the same Gazebo plugin can result in identical data between two models, 
-    so the second D435i camera was actually simulated using Kinect's plugin.-->
+    so the second D435i camera was actually simulated using Kinect's plugin.>
     
     <include>
       <uri>model://realsense_camera_2</uri>
@@ -40,7 +41,18 @@
           <lower>0</lower>
         </limit>
       </axis>
-    </joint>
+    </joint-->
+    
+    <!--include>
+      <uri>model://gps</uri>
+      <pose>0 0 0.036 0 0 0</pose>
+      <name>gps</name>
+    </include>
+    
+    <joint name='gps_joint' type='fixed'>
+      <child>gps::link</child>
+      <parent>solo::base_link</parent>
+    </joint-->
     
 
   </model>
