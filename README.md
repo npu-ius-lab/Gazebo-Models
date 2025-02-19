@@ -4,9 +4,8 @@
 >如果你只是使用Gazebo，或者使用的是其他与Gazebo联动的软件包，自行为Gazebo配置环境变量即可。
 
 在Ubuntu 20.04 + Gazebo 11下验证通过。
-___
 
-## [ 声明 ]
+## 声明
 
 本仓库的模型来源为[3DGEMS](https://data.nvision2.eecs.yorku.ca/3DGEMS/), [PX4 Gazebo Plugin Suite](https://github.com/PX4/PX4-SITL_gazebo-classic/tree/main)与[Realsense_Ros_Gazebo](https://gitee.com/nie_xun/realsense_ros_gazebo)。
 
@@ -19,7 +18,7 @@ ___
 - **Realsense_Ros_Gazebo**
 此项目源于Intel Realsense实感相机为Gazebo开发的插件，此项目的作者将官方的xacro模型文件导出为了sdf文件，并给出了配置深度相机仿真的[相关教程](https://blog.csdn.net/weixin_41469272/article/details/117919845)（虽然应用了这位作者的模型，但我不建议参照他的教程进行配置，比较麻烦且略显凌乱。我会在下面说明如何配置Realsense相机，如D435i）。
 
-## [ 简介 ]
+## 简介
 
 本仓库涵盖了大部分仿真场景，且已完成了四旋翼无人机在室内外场景利用双目深度相机D435i进行定位与规划的仿真实验。你也可以根据自己的需要编辑模型文件与世界文件进行仿真。
 
@@ -48,7 +47,7 @@ ___
 
 世界文件`.world`本质上是调用模型和贴图组合场景而得的，你也可以用以上模型组成自己的世界文件并导出。本仓库也预设了很多世界文件以供使用。
 
-## [ 前提条件 ]
+## 前提条件
 
 请确保已经完成了PX4固件的编译与ROS、MAVROS的安装，并能够在gazebo中生成无人机模型。具体说来，如果你能够启动`roslaunch px4 mavros_posix_sitl.launch`，则环境正常。
 
@@ -56,12 +55,12 @@ ___
 
 gazebo需要使用显卡驱动，否则在加载大型场景和相机插件时会很卡。请按照[Gazebo贼卡，使用GPU加速重装显卡驱动无效解决方法](https://blog.csdn.net/weixin_63843256/article/details/145191913)和[Gazebo GPU加速【gzserver running in GPU】](https://blog.csdn.net/qq_38853759/article/details/132522471)等教程配置。
 
-## [ 使用方法 ]
+## 使用方法
 
 执行删除和覆盖操作之前，**最好先备份**！
 
 **1**. 下载本仓库到任一文件夹：
-```
+```bash
 git clone https://gitee.com/Invocatory_Weiyang/gazebo-models.git
 ```
 
@@ -73,11 +72,11 @@ git clone https://gitee.com/Invocatory_Weiyang/gazebo-models.git
 >除非你了解环境变量的配置方法，否则不要移动这个文件的位置。
 
 **5**. 打开`PX4-Autopilot/Tools/setup_gazebo.bash`，找到这一行：
-```
+```bash
 export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:${SRC_DIR}/Tools/sitl_gazebo/models
 ```
 在下面添加：
-```
+```bash
 source ${SRC_DIR}/Tools/sitl_gazebo/setup_models.bash
 ```
 
@@ -104,11 +103,11 @@ source ${SRC_DIR}/Tools/sitl_gazebo/setup_models.bash
     <arg name="sdf" default="$(find mavlink_sitl_gazebo)/models/Vehicles/$(arg my_camera)/model.sdf"/>
 ```
 然后保存退出。打开终端，执行如下命令：
-```
+```bash
 roslaunch px4 mavros_posix_sitl.launch
 ```
 启动时可能会报一些关于`spawn service`的错误，请耐心等待。如果过长时间仍未加载完成，可能是gazebo自动联网搜索模型了。可以尝试在`~/.bashrc`中加上：
-```
+```bash
 export GAZEBO_MODEL_DATABASE_URI=""
 ```
 也许有帮助。如果正确启动，应当出现了如下的场景。
@@ -120,22 +119,28 @@ export GAZEBO_MODEL_DATABASE_URI=""
 >虽然`my_camera`参数叫这个名字，但是为它加载的模型必须是**载具模型**，而不能是单个的相机模型（换句话说，相机模型必须挂载到载具上）。
 另外，不能直接替换`vehicle`的参数值来更改飞机模型，因为这个参数值是用来告诉启动文件“机型”是什么的。
 
-## [ 已知问题 ]
+## 已知问题
 
 本仓库尚有以下Bug未解决。
 
-**1**. 部分模型缺失三维文件，导致无法插入。
+<br>
+
+**1. 部分模型缺失三维文件，导致无法插入。**
 
 我无法解决这个问题，因为本质上该仓库只是收集了一些模型并进行修复、验证。
 
-**2**. Realsense双目相机同时插入两个时，只有一个在工作。
+<br>
+
+**2. Realsense双目相机同时插入两个时，只有一个在工作。**
 
 表现为不同的`image_raw`话题上发布了相同的图像。猜测是`librealsense_gazebo_plugin.so`插件的问题，但无法解决。
 
 暂时可行的解决方法是，给另一个双目相机加载`libgazebo_ros_openni_kinect.so`插件，这样两个不同的插件独立工作，问题解决。但此插件不能发布双目话题，只有深度话题，因此如果是需要两个双目图像的应用场景就不能使用了。
 >你可能会发现，`depth_camera`模型加载的插件也是上面这个插件。如果你使用这个模型仿真，深度图可能会有问题，疑似是sdf写的有缺陷。推荐使用作者配置的`realsense_camera_2`。
 
-**3**. 配置本仓库后，使用`make px4_sitl gazebo`命令加载时会报错。
+<br>
+
+**3. 配置本仓库后，使用`make px4_sitl gazebo`命令加载时会报错。**
 
 表现为：
 ```
