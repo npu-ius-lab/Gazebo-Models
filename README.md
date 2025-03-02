@@ -80,7 +80,7 @@ git clone https://gitee.com/Invocatory_Weiyang/gazebo-models.git
 **3**. 用本仓库中的`CMakeLists.txt`替换掉`PX4-Autopilot/Tools/sitl_gazebo`中的同名文件。
 
 **4**. 将本仓库中的`setup_models_v1.11.3.bash`复制到`PX4-Autopilot/Tools/sitl_gazebo`中，并把它重命名为`setup_models.bash`。
->v1.15.0版本固件
+>v1.15.0版本固件则复制后缀为1.15.0的即可，文件夹则是`PX4-Autopilot/Tools/simulation/gazebo-classic`。  
 >除非你了解环境变量的配置方法，否则不要移动这个文件的位置。
 
 **5**. 如果是v1.11.3，则打开`PX4-Autopilot/Tools/setup_gazebo.bash`，找到这一行：
@@ -171,3 +171,7 @@ export GAZEBO_MODEL_DATABASE_URI=""
 [Err] [InsertModelWidget.cc:403] Missing model.config for model ...
 ```
 不影响编译通过，但用此方式打开gazebo时会加载不出任何模型。初步推断是更改路径导致的错误，但找不到解决方法。你可以使用`roslaunch`启动gazebo，没有任何影响。
+
+**4. PX4 v1.11.3版本的固件自带的GPS插件无法加载。**
+
+表现为PX4无法收到GPS信息，Gazebo中也看不到GPS插件被正确加载。目前不确定是本人偶发的现象还是该版本固件内置的GPS插件的问题。在v1.15.0上测试正常。
