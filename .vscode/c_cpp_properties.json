@@ -1,0 +1,33 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/zzy/Target-Tracking-Drone-250/devel/include/**",
+        "/opt/ros/noetic/include/**",
+        "/home/zzy/Target-Tracking-Drone-250/src/EGO-Planner/planner/bspline_opt/include/**",
+        "/home/zzy/Target-Tracking-Drone-250/src/VINS-Fusion/camera_models/include/**",
+        "/home/zzy/Target-Tracking-Drone-250/src/EGO-Planner/planner/plan_manage/include/**",
+        "/home/zzy/Target-Tracking-Drone-250/src/EGO-Planner/Utils/multi_map_server/include/**",
+        "/home/zzy/Target-Tracking-Drone-250/src/OpenCV-Tracking/opencv_tracking/include/**",
+        "/home/zzy/Target-Tracking-Drone-250/src/EGO-Planner/planner/path_searching/include/**",
+        "/home/zzy/Target-Tracking-Drone-250/src/EGO-Planner/planner/plan_env/include/**",
+        "/home/zzy/Target-Tracking-Drone-250/src/EGO-Planner/Utils/pose_utils/include/**",
+        "/home/zzy/Target-Tracking-Drone-250/src/EGO-Planner/Utils/quadrotor_msgs/include/**",
+        "/home/zzy/Target-Tracking-Drone-250/src/Realsense2-Camera/include/**",
+        "/home/zzy/Target-Tracking-Drone-250/src/EGO-Planner/planner/traj_utils/include/**",
+        "/home/zzy/Target-Tracking-Drone-250/src/EGO-Planner/Utils/uav_utils/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}
