@@ -81,6 +81,7 @@ git clone https://gitee.com/Invocatory_Weiyang/gazebo-models.git
 
 **4**. 将本仓库中的`setup_models_v1.11.3.bash`复制到`PX4-Autopilot/Tools/sitl_gazebo`中，并把它重命名为`setup_models.bash`。
 >v1.15.0版本固件则复制后缀为1.15.0的即可，文件夹则是`PX4-Autopilot/Tools/simulation/gazebo-classic`。  
+
 >除非你了解环境变量的配置方法，否则不要移动这个文件的位置。
 
 **5**. 如果是v1.11.3，则打开`PX4-Autopilot/Tools/setup_gazebo.bash`，找到这一行：
@@ -147,31 +148,20 @@ export GAZEBO_MODEL_DATABASE_URI=""
 
 本仓库尚有以下Bug未解决。
 
-<br>
-
-**1. 部分模型缺失三维文件，导致无法插入。**
-
+**1. 部分模型缺失三维文件，导致无法插入。**  
 我无法解决这个问题，因为本质上该仓库只是收集了一些模型并进行修复、验证。
 
-<br>
-
-**2. Realsense双目相机同时插入两个时，只有一个在工作。**
-
-表现为不同的`image_raw`话题上发布了相同的图像。猜测是`librealsense_gazebo_plugin.so`插件的问题，但无法解决。
-
-暂时可行的解决方法是，给另一个双目相机加载`libgazebo_ros_openni_kinect.so`插件，这样两个不同的插件独立工作，问题解决。但此插件不能发布双目话题，只有深度话题，因此如果是需要两个双目图像的应用场景就不能使用了。
+**2. Realsense双目相机同时插入两个时，只有一个在工作。**  
+表现为不同的`image_raw`话题上发布了相同的图像。猜测是`librealsense_gazebo_plugin.so`插件的问题，但无法解决。  
+暂时可行的解决方法是，给另一个双目相机加载`libgazebo_ros_openni_kinect.so`插件，这样两个不同的插件独立工作，问题解决。但此插件不能发布双目话题，只有深度话题，因此如果是需要两个双目图像的应用场景就不能使用了。  
 >你可能会发现，`depth_camera`模型加载的插件也是上面这个插件。如果你使用这个模型仿真，深度图可能会有问题，疑似是sdf写的有缺陷。推荐使用作者配置的`realsense_camera_2`。
 
-<br>
-
-**3. 配置本仓库后，使用`make px4_sitl gazebo`命令加载时会报错。**
-
+**3. 配置本仓库后，使用`make px4_sitl gazebo`命令加载时会报错。**  
 表现为：
 ```
 [Err] [InsertModelWidget.cc:403] Missing model.config for model ...
 ```
 不影响编译通过，但用此方式打开gazebo时会加载不出任何模型。初步推断是更改路径导致的错误，但找不到解决方法。你可以使用`roslaunch`启动gazebo，没有任何影响。
 
-**4. PX4 v1.11.3版本的固件自带的GPS插件无法加载。**
-
+**4. PX4 v1.11.3版本的固件自带的GPS插件无法加载。**  
 表现为PX4无法收到GPS信息，Gazebo中也看不到GPS插件被正确加载。目前不确定是本人偶发的现象还是该版本固件内置的GPS插件的问题。在v1.15.0上测试正常。
