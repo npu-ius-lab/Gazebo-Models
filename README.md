@@ -53,14 +53,14 @@
 
 如果还没有配置好PX4编译环境，请参照[Ubuntu20.04+ROS1+PX4+Gazebo仿真（三）环境配置](https://www.bilibili.com/opus/934654041226477571)和[PX4从放弃到精通（二）：ubuntu18.04配置px4编译环境及mavros环境](https://blog.csdn.net/qq_38768959/article/details/106041494?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522167361309116782425683823%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fblog.%2522%257D&request_id=167361309116782425683823&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~blog~first_rank_ecpm_v1~rank_v31_ecpm-4-106041494-null-null.blog_rank_default&utm_term=gazebo&spm=1018.2226.3001.4450)两篇教程进行配置。
 >以上教程基本适用于各版本的PX4环境编译，但是在v1.15.0版本中，gazebo仿真的功能包路径发生了变化。具体说来是：
-```bash
-export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:~/PX4-Autopilot/Tools/sitl_gazebo
-```
-更改为了：
-```bash
-export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:~/PX4-Autopilot/Tools/simulation/gazebo-classic/sitl_gazebo-classic
-```
-请注意更改~/.bashrc文件的路径。
+>```bash
+>export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:~/PX4-Autopilot/Tools/sitl_gazebo
+>```
+>更改为了：
+>```bash
+>export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:~/PX4-Autopilot/Tools/simulation/gazebo-classic/sitl_gazebo-classic
+>```
+>请注意更改~/.bashrc文件的路径。
 
 gazebo需要使用显卡驱动，否则在加载大型场景和相机插件时会很卡。请按照[Gazebo贼卡，使用GPU加速重装显卡驱动无效解决方法](https://blog.csdn.net/weixin_63843256/article/details/145191913)和[Gazebo GPU加速【gzserver running in GPU】](https://blog.csdn.net/qq_38853759/article/details/132522471)等教程配置。
 
