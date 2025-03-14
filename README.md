@@ -129,6 +129,39 @@ export GAZEBO_MODEL_DATABASE_URI=""
 >虽然`my_camera`参数叫这个名字，但是为它加载的模型必须是**载具模型**，而不能是单个的相机模型（换句话说，相机模型必须挂载到载具上）。
 另外，不能直接替换`vehicle`的参数值来更改飞机模型，因为这个参数值是用来告诉启动文件“机型”是什么的。
 
+**8**. 如果你想要移动场景内的模型，则可配置我的**移动插件**`move_car.py` 。（其实它可以移动任何模型，但是移动车辆看起来比较真实，所以取了这个名字）  
+
+首先，将`sources`文件夹下的`move_car.py`脚本移动到`Tools/simulation/gazebo-classic/sitl_gazebo-classic/scripts`中，右击它，属性-权限，勾选允许文件作为程序执行；  
+然后，打开上一级文件夹下的`package.xml`，将以下内容复制到一堆`<run_depend>...`（大约在60多行）的后面：
+```xml
+    <exec_depend>rospy</exec_depend>
+    <exec_depend>gazebo_msgs</exec_depend>
+    <exec_depend>std_msgs</exec_depend>
+```
+接着，打开文件夹下的`CMakeLists.txt`，将以下内容复制到`## Install ##`部分的最后：
+```cmake
+catkin_install_python(PROGRAMS scripts/move_car.py
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
+```
+最后，在文件夹内执行：
+```bash
+catkin build
+```
+脚本就可以正常启动了。  
+执行步骤7中的命令打开Gazebo，然后新启动一个终端，输入：
+```bash
+rosrun mavlink_sitl_gazebo move_car.py 
+```
+你应该能见到如下的界面：
+![](sources/Image2.png)
+现在可以尝试按下键盘上的WASD键，使模型前进、后退、转向。  
+
+按键逻辑是控制物体速度和角度的，即只要你按一次W或者S键模型就会运动，多按几次就会运动的快一些；只要你按一次A或者D键模型就会转向，多按几次就多转几下。模型始终朝着当前偏航角指向的方向运动。
+
+如果需要物体停下，按数字0。  
+如果需要退出，按两次Ctrl+C。
+
 ## 已知问题
 
 本仓库尚有以下Bug未解决。
