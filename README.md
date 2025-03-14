@@ -3,7 +3,12 @@
 本仓库收集了适用于Gazebo仿真的诸多模型文件，包括场景、物件、载具、世界文件等。主要应用于PX4与Gazebo的联合仿真。
 >如果你只是使用Gazebo，或者使用的是其他与Gazebo联动的软件包，自行为Gazebo配置环境变量即可。
 
+此外，本仓库还开发了一个Python小插件，通过键盘控制场景内的模型移动，可以同时控制位置与偏航角，便于进行跟踪、打击等算法的仿真实验。
+
 在Ubuntu 20.04 + Gazebo 11 + PX4 v1.11.3/v1.15.0下验证通过。
+
+**此分支是为新版本PX4固件（高于v1.13.0）准备的！**  
+如果你正在使用旧版本固件，请切换到for-old-px4分支上。
 
 ## 声明
 
@@ -47,12 +52,15 @@
 
 世界文件`.world`本质上是调用模型和贴图组合场景而得的，你也可以用以上模型组成自己的世界文件并导出。本仓库也预设了很多世界文件以供使用。
 
+此外，作者还编写了一个Python脚本用于控制模型在世界中移动，本质上是调用了Gazebo的话题`'gazebo/set_model_state`以高频率更新模型的位置而实现移动的效果。  
+控制逻辑已经经过验证，可以实现较为连续流畅的移动，还能够偏转物体的方向（即偏航角）。
+
 ## 前提条件
 
 请确保已经完成了PX4固件的编译与ROS、MAVROS的安装，并能够在gazebo中生成无人机模型。具体说来，如果你能够启动`roslaunch px4 mavros_posix_sitl.launch`，则环境正常。
 
 如果还没有配置好PX4编译环境，请参照[Ubuntu20.04+ROS1+PX4+Gazebo仿真（三）环境配置](https://www.bilibili.com/opus/934654041226477571)和[PX4从放弃到精通（二）：ubuntu18.04配置px4编译环境及mavros环境](https://blog.csdn.net/qq_38768959/article/details/106041494?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522167361309116782425683823%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fblog.%2522%257D&request_id=167361309116782425683823&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~blog~first_rank_ecpm_v1~rank_v31_ecpm-4-106041494-null-null.blog_rank_default&utm_term=gazebo&spm=1018.2226.3001.4450)两篇教程进行配置。
->以上教程基本适用于各版本的PX4环境编译，但是在v1.15.0版本中，gazebo仿真的功能包路径发生了变化。具体说来是：
+>以上教程基本适用于各版本的PX4环境编译，但是在高版本固件中，gazebo仿真的功能包路径发生了变化。具体说来是：
 >```bash
 >export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:~/PX4-Autopilot/Tools/sitl_gazebo
 >```
@@ -67,33 +75,23 @@ gazebo需要使用显卡驱动，否则在加载大型场景和相机插件时�
 ## 使用方法
 
 执行删除和覆盖操作之前，**最好先备份**！  
-下面的教程如无说明，基于PX4 v1.11.3固件版本。
+进行以下步骤之前，需要确保你已经成功执行过`make px4_sitl gazebo`命令，并且能找到`PX4-Autopilot/build`文件夹存在。  
+如无特别说明，下面教程中的文件和文件夹都位于`PX4-Autopilot/`中。
 
 **1**. 下载本仓库到任一文件夹：
 ```bash
 git clone https://gitee.com/Invocatory_Weiyang/gazebo-models.git
 ```
 
-**2**. 将本仓库`models`和`worlds`文件夹覆盖到`PX4-Autopilot/Tools/sitl_gazebo`下的同名文件夹。需要先删除原有的文件夹，然后再将本仓库中的同名文件夹粘贴进去。不能直接合并，有可能报错。
->在v1.15.0版本中，这个路径是`PX4-Autopilot/Tools/simulation/gazebo-classic`，以下同理。
+**2**. 将本仓库`models`和`worlds`文件夹覆盖到`Tools/simulation/gazebo-classic/sitl_gazebo-classic`下的同名文件夹。需要先删除原有的文件夹，然后再将本仓库中的同名文件夹粘贴进去。不能直接合并，有可能报错。
 
-**3**. 用本仓库中的`CMakeLists.txt`替换掉`PX4-Autopilot/Tools/sitl_gazebo`中的同名文件。
+**3**. 用本仓库中`source`下的`CMakeLists.txt`替换掉`Tools/simulation/gazebo-classic/sitl_gazebo-classic`中的同名文件。
 
-**4**. 将本仓库中的`setup_models_v1.11.3.bash`复制到`PX4-Autopilot/Tools/sitl_gazebo`中，并把它重命名为`setup_models.bash`。
->v1.15.0版本固件则复制后缀为1.15.0的即可，文件夹则是`PX4-Autopilot/Tools/simulation/gazebo-classic`。  
+**4**. 将本仓库中的`setup_models.bash`复制到`Tools/simulation/gazebo-classic/sitl_gazebo-classic`中。
 
 >除非你了解环境变量的配置方法，否则不要移动这个文件的位置。
 
-**5**. 如果是v1.11.3，则打开`PX4-Autopilot/Tools/setup_gazebo.bash`，找到这一行：
-```bash
-export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:${SRC_DIR}/Tools/sitl_gazebo/models
-```
-在下面添加：
-```bash
-source ${SRC_DIR}/Tools/sitl_gazebo/setup_models.bash
-```
-
-如果是v1.15.0，则打开`PX4-Autopilot/Tools/simulation/gazebo-classic`，找到这一行：
+**5**. 打开`Tools/simulation/gazebo-classic/setup_gazebo.bash`，找到这一行：
 ```bash
 export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:${SRC_DIR}/Tools/simulation/gazebo-classic/sitl_gazebo-classic/models
 ```
@@ -102,16 +100,12 @@ export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:${SRC_DIR}/Tools/simulation/gazebo-c
 source ${SRC_DIR}/Tools/simulation/gazebo-classic/sitl_gazebo-classic/setup_models.bash
 ```
 
->请注意，不同PX4版本存放gazebo仿真功能包的路径不同，因此上述脚本文件中添加环境变量的路径也要相应更改。这里预置了v1.11.3和v1.15.0版本的环境变量脚本，如使用其他版本，注意自行核对路径。  
->就作者所知而言，PX4固件在1.14版本发生了一次重大变更。在此之前的版本和1.11.3类似，之后的和1.15.0类似。
-
-**6**. 将`libgazebo_ros_openni_kinect.so`和`librealsense_gazebo_plugin.so`移动到`PX4-Autopilot/build/px4_sitl_default/build_gazebo`文件夹下。
->如果你找不到`build`文件夹，请先执行一次`make px4_sitl gazebo`命令。
+**6**. 将本仓库中`source`下的`libgazebo_ros_openni_kinect.so`和`librealsense_gazebo_plugin.so`插件移动到`build/px4_sitl_default/build_gazebo-classic`文件夹下。
 
 **7**. 模型现在已经配置完毕，现在可以启动它了。下面将要启动一个在bayland场景中搭载前视、下视双目相机的四旋翼无人机solo进行仿真。
 
-打开`PX4-Autopilot/launch/mavros_posix_sitl.launch`文件，找到这一段代码：
-```
+打开`launch/mavros_posix_sitl.launch`文件，找到这一段代码：
+```xml
     <!-- vehicle model and world -->
     <arg name="est" default="ekf2"/>
     <arg name="vehicle" default="iris"/>
@@ -119,7 +113,7 @@ source ${SRC_DIR}/Tools/simulation/gazebo-classic/sitl_gazebo-classic/setup_mode
     <arg name="sdf" default="$(find mavlink_sitl_gazebo)/models/Vehicles/$(arg vehicle)/$(arg vehicle).sdf"/>
 ```
 将其修改为：
-```
+```xml
     <!-- vehicle model and world -->
     <arg name="est" default="ekf2"/>
     <arg name="vehicle" default="solo"/>
@@ -136,13 +130,46 @@ roslaunch px4 mavros_posix_sitl.launch
 export GAZEBO_MODEL_DATABASE_URI=""
 ```
 也许有帮助。如果正确启动，应当出现了如下的场景。
-![](Image1.png)
+![](sources/Image1.png)
 
 你可以新开一个终端，输入`rqt_image_view`命令，此时就能看到两个双目摄像机发送的图像数据了。
 
 你可以将刚才更改的`launch`文件中的`my_camera`和`world`参数进行修改，改为你喜欢的机型和世界文件。我已经在`world`文件夹中预置了一些好看和实用的模型，标记为01-12，你可以选择使用。
 >虽然`my_camera`参数叫这个名字，但是为它加载的模型必须是**载具模型**，而不能是单个的相机模型（换句话说，相机模型必须挂载到载具上）。
 另外，不能直接替换`vehicle`的参数值来更改飞机模型，因为这个参数值是用来告诉启动文件“机型”是什么的。
+
+**8**. 如果你想要移动场景内的模型，则可配置我的**移动插件**`move_car.py` 。（其实它可以移动任何模型，但是移动车辆看起来比较真实，所以取了这个名字）  
+
+首先，将`sources`文件夹下的`move_car.py`脚本移动到`Tools/simulation/gazebo-classic/sitl_gazebo-classic/scripts`中，右击它，属性-权限，勾选允许文件作为程序执行；  
+然后，打开上一级文件夹下的`package.xml`，将以下内容复制到一堆`<run_depend>...`（大约在60多行）的后面：
+```xml
+    <exec_depend>rospy</exec_depend>
+    <exec_depend>gazebo_msgs</exec_depend>
+    <exec_depend>std_msgs</exec_depend>
+```
+接着，打开文件夹下的`CMakeLists.txt`，将以下内容复制到`## Install ##`部分的最后：
+```cmake
+catkin_install_python(PROGRAMS scripts/move_car.py
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
+```
+最后，在文件夹内执行：
+```bash
+catkin build
+```
+脚本就可以正常启动了。  
+执行步骤7中的命令打开Gazebo，然后新启动一个终端，输入：
+```bash
+rosrun mavlink_sitl_gazebo move_car.py 
+```
+你应该能见到如下的界面：
+![](sources/Image2.png)
+现在可以尝试按下键盘上的WASD键，使模型前进、后退、转向。  
+
+按键逻辑是控制物体速度和角度的，即只要你按一次W或者S键模型就会运动，多按几次就会运动的快一些；只要你按一次A或者D键模型就会转向，多按几次就多转几下。模型始终朝着当前偏航角指向的方向运动。
+
+如果需要物体停下，按数字0。  
+如果需要退出，按两次Ctrl+C。
 
 ## 已知问题
 

@@ -941,10 +941,10 @@
       <pose>21.8484 -5.6481 0 0 -0 0</pose>
     </model>
     <state world_name='default'>
-      <sim_time>1738 576000000</sim_time>
-      <real_time>202 674282261</real_time>
-      <wall_time>1740576302 919730547</wall_time>
-      <iterations>50608</iterations>
+      <sim_time>1991 956000000</sim_time>
+      <real_time>254 4233312</real_time>
+      <wall_time>1741919716 394601105</wall_time>
+      <iterations>63345</iterations>
       <model name='baylands'>
         <pose>82 108 0 0 -0 0</pose>
         <scale>1 1 1</scale>
@@ -977,14 +977,14 @@
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='cube_r'>
-        <pose>-3 -3 2 0 -0 0</pose>
+      <model name='hatchback_red'>
+        <pose>-2.69951 11.2383 1.28367 -0.050564 -0.04173 2.74053</pose>
         <scale>1 1 1</scale>
-        <link name='link_2'>
-          <pose>-3 -3 2.1 0 -0 0</pose>
+        <link name='link'>
+          <pose>-2.69951 11.2383 1.28367 -0.050564 -0.04173 2.74053</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
+          <acceleration>0.025057 0.050082 -7.21181 -1.89945 0.136603 -3.09031</acceleration>
+          <wrench>0.025057 0.050082 -7.21181 0 -0 0</wrench>
         </link>
       </model>
       <model name='house_1'>
@@ -995,6 +995,82 @@
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='iris'>
+        <pose>-0.044622 0.026056 0.735673 0.002129 -0.000887 -1.42572</pose>
+        <scale>1 1 1</scale>
+        <link name='iris::/imu_link'>
+          <pose>-0.044622 0.026056 0.735672 0.002128 -0.000879 -1.42572</pose>
+          <velocity>-1.2e-05 1.1e-05 -2.7e-05 -0.000255 0.000187 -3e-06</velocity>
+          <acceleration>7.7e-05 -4.3e-05 8.6e-05 -0.028078 0.191876 -2.9e-05</acceleration>
+          <wrench>1e-06 -1e-06 1e-06 0 -0 0</wrench>
+        </link>
+        <link name='iris::base_link'>
+          <pose>-0.044622 0.026056 0.735673 0.002129 -0.000887 -1.42572</pose>
+          <velocity>-1.1e-05 1.1e-05 -2.7e-05 -0.000196 -0.000194 0</velocity>
+          <acceleration>8e-06 -1.1e-05 2.4e-05 0.000196 0.000141 0</acceleration>
+          <wrench>1.2e-05 -1.6e-05 3.6e-05 0 -0 0</wrench>
+        </link>
+        <link name='iris::gps::link'>
+          <pose>-0.044622 0.026056 0.735672 0.002129 -0.000879 -1.42572</pose>
+          <velocity>-1.2e-05 1.1e-05 -2.7e-05 -0.000199 -0.000195 -3e-06</velocity>
+          <acceleration>7.5e-05 -4.3e-05 9.5e-05 -3e-05 0.00014 0.000142</acceleration>
+          <wrench>1e-06 -1e-06 1e-06 0 -0 0</wrench>
+        </link>
+        <link name='iris::rotor_0'>
+          <pose>-0.243568 -0.13437 0.758317 0.002089 -0.001612 -1.10691</pose>
+          <velocity>-1.7e-05 1.6e-05 -3.4e-05 0.000101 -0.002144 2e-06</velocity>
+          <acceleration>-0.000375 0.000197 4.3e-05 1.04213 -0.634694 -2.94498</acceleration>
+          <wrench>-2e-06 1e-06 0 0 -0 0</wrench>
+        </link>
+        <link name='iris::rotor_1'>
+          <pose>0.134432 0.183617 0.758983 0.002235 -0.000557 -1.57293</pose>
+          <velocity>-1.6e-05 1.5e-05 -2.3e-05 -0.000199 -0.000199 0</velocity>
+          <acceleration>-0.000172 -3.8e-05 2.4e-05 -0.000789 -0.369943 0.000205</acceleration>
+          <wrench>-1e-06 -0 0 0 -0 0</wrench>
+        </link>
+        <link name='iris::rotor_2'>
+          <pose>0.191809 -0.07076 0.759254 0.002178 0.000353 -1.98305</pose>
+          <velocity>-1.7e-05 1.5e-05 3.9e-05 -7.8e-05 0.000698 -0</velocity>
+          <acceleration>-0.000327 -7.7e-05 0.000126 0.866854 0.914878 -3.12149</acceleration>
+          <wrench>-2e-06 -0 1e-06 0 -0 0</wrench>
+        </link>
+        <link name='iris::rotor_3'>
+          <pose>-0.261365 0.12579 0.758131 0.002236 -0.000557 -1.57295</pose>
+          <velocity>-1.6e-05 1.6e-05 -8.9e-05 -0.000199 -0.000204 0</velocity>
+          <acceleration>-0.000202 0.000209 -5.4e-05 -0.00147 -0.686085 0.000381</acceleration>
+          <wrench>-1e-06 1e-06 -0 0 -0 0</wrench>
+        </link>
+        <link name='realsense_camera_1::camera_color_frame'>
+          <pose>0.004883 -0.088011 0.735487 0.000885 -0.003391 -1.42654</pose>
+          <velocity>-8e-06 1.2e-05 0.000107 -0.000364 1.7e-05 -0.000454</velocity>
+          <acceleration>-0.002972 -0.000381 0.012423 0.025725 0.048472 0.053885</acceleration>
+          <wrench>-4e-06 -1e-06 1.9e-05 0 -0 0</wrench>
+        </link>
+        <link name='realsense_camera_1::camera_depth_frame'>
+          <pose>0.004884 -0.088011 0.73545 0.000716 -0.003364 -1.42656</pose>
+          <velocity>-6e-06 1e-05 0.000119 0.00709 0.001072 -0.000651</velocity>
+          <acceleration>-0.00316 -0.000279 0.013595 0.001561 0.038906 0.07396</acceleration>
+          <wrench>-5e-06 -0 2e-05 0 -0 0</wrench>
+        </link>
+        <link name='realsense_camera_1::camera_ired1_frame'>
+          <pose>-0.007487 -0.089808 0.73545 0.001095 -0.00339 -1.42654</pose>
+          <velocity>-9e-06 1.8e-05 0.000106 -0.008632 -0.00108 -0.000459</velocity>
+          <acceleration>-0.002872 -0.00106 0.012877 1.61398 -0.628713 0.035137</acceleration>
+          <wrench>-4e-06 -2e-06 1.9e-05 0 -0 0</wrench>
+        </link>
+        <link name='realsense_camera_1::camera_ired2_frame'>
+          <pose>-0.056967 -0.096996 0.735275 0.001218 -0.003348 -1.42654</pose>
+          <velocity>-1.2e-05 3.7e-05 0.000116 0.016321 0.002608 -0.000357</velocity>
+          <acceleration>-0.002547 -0.003447 0.015285 1.47662 1.17977 0.078683</acceleration>
+          <wrench>-4e-06 -5e-06 2.3e-05 0 -0 0</wrench>
+        </link>
+        <link name='realsense_camera_1::camera_link'>
+          <pose>-0.027279 -0.092683 0.735372 1.5682 -0.003297 0.144259</pose>
+          <velocity>-1e-05 2.7e-05 0.000112 3.3e-05 6.8e-05 -0.000497</velocity>
+          <acceleration>-0.002757 -0.002171 0.014123 0.020444 0.028765 0.057595</acceleration>
+          <wrench>-0.000155 -0.000122 0.000797 0 -0 0</wrench>
         </link>
       </model>
       <model name='playground'>
@@ -1107,60 +1183,714 @@
     </state>
     <gui fullscreen='0'>
       <camera name='user_camera'>
-        <pose>6.61215 8.72626 12.3318 0 0.661797 -2.10801</pose>
+        <pose>13.9935 13.9875 12.7533 0 0.477798 -2.64401</pose>
         <view_controller>orbit</view_controller>
         <projection_type>perspective</projection_type>
       </camera>
     </gui>
-    <model name='cube_r'>
-      <link name='link_2'>
-        <pose>0 0 0.1 0 -0 0</pose>
+    <model name='iris'>
+      <frame name='iris::__model__' attached_to='iris::base_link'>
+        <pose relative_to='__model__'>0 0 0 0 -0 0</pose>
+      </frame>
+      <link name='iris::base_link'>
         <inertial>
-          <mass>1</mass>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1.5</mass>
           <inertia>
-            <ixx>0.166667</ixx>
+            <ixx>0.029125</ixx>
             <ixy>0</ixy>
             <ixz>0</ixz>
-            <iyy>0.166667</iyy>
+            <iyy>0.029125</iyy>
             <iyz>0</iyz>
-            <izz>0.166667</izz>
+            <izz>0.055225</izz>
+          </inertia>
+        </inertial>
+        <collision name='base_link_inertia_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.47 0.47 0.11</size>
+            </box>
+          </geometry>
+          <surface>
+            <contact>
+              <ode>
+                <min_depth>0.001</min_depth>
+                <max_vel>0</max_vel>
+              </ode>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='base_link_inertia_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>model://rotors_description/meshes/iris.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/DarkGrey</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <pose relative_to='iris::__model__'>0 0 0 0 -0 0</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='iris::/imu_joint' type='revolute'>
+        <pose relative_to='iris::base_link'>0 0 0 0 -0 0</pose>
+        <parent>iris::base_link</parent>
+        <child>iris::/imu_link</child>
+        <axis>
+          <xyz>1 0 0</xyz>
+          <limit>
+            <lower>0</lower>
+            <upper>0</upper>
+            <effort>0</effort>
+            <velocity>0</velocity>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='iris::/imu_link'>
+        <pose relative_to='iris::/imu_joint'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>0.015</mass>
+          <inertia>
+            <ixx>1e-05</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1e-05</iyy>
+            <iyz>0</iyz>
+            <izz>1e-05</izz>
+          </inertia>
+        </inertial>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='iris::rotor_0_joint' type='revolute'>
+        <pose relative_to='iris::base_link'>0.13 -0.22 0.023 0 -0 0</pose>
+        <parent>iris::base_link</parent>
+        <child>iris::rotor_0</child>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='iris::rotor_0'>
+        <pose relative_to='iris::rotor_0_joint'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>0.005</mass>
+          <inertia>
+            <ixx>9.75e-07</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.000273104</iyy>
+            <iyz>0</iyz>
+            <izz>0.000274004</izz>
+          </inertia>
+        </inertial>
+        <collision name='rotor_0_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <length>0.005</length>
+              <radius>0.128</radius>
+            </cylinder>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='rotor_0_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>model://rotors_description/meshes/iris_prop_ccw.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Blue</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='iris::rotor_1_joint' type='revolute'>
+        <pose relative_to='iris::base_link'>-0.13 0.2 0.023 0 -0 0</pose>
+        <parent>iris::base_link</parent>
+        <child>iris::rotor_1</child>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='iris::rotor_1'>
+        <pose relative_to='iris::rotor_1_joint'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>0.005</mass>
+          <inertia>
+            <ixx>9.75e-07</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.000273104</iyy>
+            <iyz>0</iyz>
+            <izz>0.000274004</izz>
+          </inertia>
+        </inertial>
+        <collision name='rotor_1_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <length>0.005</length>
+              <radius>0.128</radius>
+            </cylinder>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='rotor_1_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>model://rotors_description/meshes/iris_prop_ccw.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/DarkGrey</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='iris::rotor_2_joint' type='revolute'>
+        <pose relative_to='iris::base_link'>0.13 0.22 0.023 0 -0 0</pose>
+        <parent>iris::base_link</parent>
+        <child>iris::rotor_2</child>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='iris::rotor_2'>
+        <pose relative_to='iris::rotor_2_joint'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>0.005</mass>
+          <inertia>
+            <ixx>9.75e-07</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.000273104</iyy>
+            <iyz>0</iyz>
+            <izz>0.000274004</izz>
+          </inertia>
+        </inertial>
+        <collision name='rotor_2_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <length>0.005</length>
+              <radius>0.128</radius>
+            </cylinder>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='rotor_2_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>model://rotors_description/meshes/iris_prop_cw.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Blue</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='iris::rotor_3_joint' type='revolute'>
+        <pose relative_to='iris::base_link'>-0.13 -0.2 0.023 0 -0 0</pose>
+        <parent>iris::base_link</parent>
+        <child>iris::rotor_3</child>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='iris::rotor_3'>
+        <pose relative_to='iris::rotor_3_joint'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>0.005</mass>
+          <inertia>
+            <ixx>9.75e-07</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.000273104</iyy>
+            <iyz>0</iyz>
+            <izz>0.000274004</izz>
+          </inertia>
+        </inertial>
+        <collision name='rotor_3_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <length>0.005</length>
+              <radius>0.128</radius>
+            </cylinder>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='rotor_3_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>model://rotors_description/meshes/iris_prop_cw.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/DarkGrey</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <plugin name='rosbag' filename='libgazebo_multirotor_base_plugin.so'>
+        <robotNamespace/>
+        <linkName>iris::base_link</linkName>
+        <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+      </plugin>
+      <plugin name='front_right_motor_model' filename='libgazebo_motor_model.so'>
+        <robotNamespace/>
+        <jointName>iris::rotor_0_joint</jointName>
+        <linkName>iris::rotor_0</linkName>
+        <turningDirection>ccw</turningDirection>
+        <timeConstantUp>0.0125</timeConstantUp>
+        <timeConstantDown>0.025</timeConstantDown>
+        <maxRotVelocity>1100</maxRotVelocity>
+        <motorConstant>8.54858e-06</motorConstant>
+        <momentConstant>0.06</momentConstant>
+        <commandSubTopic>/gazebo/command/motor_speed</commandSubTopic>
+        <motorNumber>0</motorNumber>
+        <rotorDragCoefficient>0.000175</rotorDragCoefficient>
+        <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
+        <motorSpeedPubTopic>/motor_speed/0</motorSpeedPubTopic>
+        <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+      </plugin>
+      <plugin name='back_left_motor_model' filename='libgazebo_motor_model.so'>
+        <robotNamespace/>
+        <jointName>iris::rotor_1_joint</jointName>
+        <linkName>iris::rotor_1</linkName>
+        <turningDirection>ccw</turningDirection>
+        <timeConstantUp>0.0125</timeConstantUp>
+        <timeConstantDown>0.025</timeConstantDown>
+        <maxRotVelocity>1100</maxRotVelocity>
+        <motorConstant>8.54858e-06</motorConstant>
+        <momentConstant>0.06</momentConstant>
+        <commandSubTopic>/gazebo/command/motor_speed</commandSubTopic>
+        <motorNumber>1</motorNumber>
+        <rotorDragCoefficient>0.000175</rotorDragCoefficient>
+        <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
+        <motorSpeedPubTopic>/motor_speed/1</motorSpeedPubTopic>
+        <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+      </plugin>
+      <plugin name='front_left_motor_model' filename='libgazebo_motor_model.so'>
+        <robotNamespace/>
+        <jointName>iris::rotor_2_joint</jointName>
+        <linkName>iris::rotor_2</linkName>
+        <turningDirection>cw</turningDirection>
+        <timeConstantUp>0.0125</timeConstantUp>
+        <timeConstantDown>0.025</timeConstantDown>
+        <maxRotVelocity>1100</maxRotVelocity>
+        <motorConstant>8.54858e-06</motorConstant>
+        <momentConstant>0.06</momentConstant>
+        <commandSubTopic>/gazebo/command/motor_speed</commandSubTopic>
+        <motorNumber>2</motorNumber>
+        <rotorDragCoefficient>0.000175</rotorDragCoefficient>
+        <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
+        <motorSpeedPubTopic>/motor_speed/2</motorSpeedPubTopic>
+        <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+      </plugin>
+      <plugin name='back_right_motor_model' filename='libgazebo_motor_model.so'>
+        <robotNamespace/>
+        <jointName>iris::rotor_3_joint</jointName>
+        <linkName>iris::rotor_3</linkName>
+        <turningDirection>cw</turningDirection>
+        <timeConstantUp>0.0125</timeConstantUp>
+        <timeConstantDown>0.025</timeConstantDown>
+        <maxRotVelocity>1100</maxRotVelocity>
+        <motorConstant>8.54858e-06</motorConstant>
+        <momentConstant>0.06</momentConstant>
+        <commandSubTopic>/gazebo/command/motor_speed</commandSubTopic>
+        <motorNumber>3</motorNumber>
+        <rotorDragCoefficient>0.000175</rotorDragCoefficient>
+        <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
+        <motorSpeedPubTopic>/motor_speed/3</motorSpeedPubTopic>
+        <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+      </plugin>
+      <frame name='iris::gps::__model__' attached_to='iris::gps::link'>
+        <pose relative_to='iris::__model__'>0 0 0 0 -0 0</pose>
+      </frame>
+      <link name='iris::gps::link'>
+        <pose relative_to='iris::gps::__model__'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>0.015</mass>
+          <inertia>
+            <ixx>1e-05</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1e-05</iyy>
+            <iyz>0</iyz>
+            <izz>1e-05</izz>
+          </inertia>
+        </inertial>
+        <visual name='visual'>
+          <geometry>
+            <cylinder>
+              <radius>0.01</radius>
+              <length>0.002</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Black</name>
+              <uri>__default__</uri>
+            </script>
+          </material>
+        </visual>
+        <sensor name='gps' type='gps'>
+          <pose>0 0 0 0 -0 0</pose>
+          <update_rate>5</update_rate>
+          <always_on>1</always_on>
+          <visualize>0</visualize>
+          <plugin name='gps_plugin' filename='libgazebo_gps_plugin.so'>
+            <robotNamespace/>
+            <gpsNoise>1</gpsNoise>
+            <gpsXYRandomWalk>2.0</gpsXYRandomWalk>
+            <gpsZRandomWalk>4.0</gpsZRandomWalk>
+            <gpsXYNoiseDensity>2.0e-4</gpsXYNoiseDensity>
+            <gpsZNoiseDensity>4.0e-4</gpsZNoiseDensity>
+            <gpsVXYNoiseDensity>0.2</gpsVXYNoiseDensity>
+            <gpsVZNoiseDensity>0.4</gpsVZNoiseDensity>
+          </plugin>
+          <gps/>
+        </sensor>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='iris::gps_joint' type='fixed'>
+        <child>iris::gps::link</child>
+        <parent>iris::base_link</parent>
+      </joint>
+      <plugin name='gps' filename='libhector_gazebo_ros_gps.so'>
+        <updateRate>10.0</updateRate>
+        <topicName>sensor_msgs/NavSatFix</topicName>
+        <gaussianNoise>0.0 0.0 0.0</gaussianNoise>
+        <offset>0 0 0</offset>
+        <velocityGaussianNoise>0 0 0</velocityGaussianNoise>
+        <frameId>iris::gps::link</frameId>
+      </plugin>
+      <plugin name='groundtruth_plugin' filename='libgazebo_groundtruth_plugin.so'>
+        <robotNamespace/>
+      </plugin>
+      <plugin name='magnetometer_plugin' filename='libgazebo_magnetometer_plugin.so'>
+        <robotNamespace/>
+        <pubRate>100</pubRate>
+        <noiseDensity>0.0004</noiseDensity>
+        <randomWalk>6.4e-06</randomWalk>
+        <biasCorrelationTime>600</biasCorrelationTime>
+        <magTopic>/mag</magTopic>
+      </plugin>
+      <plugin name='barometer_plugin' filename='libgazebo_barometer_plugin.so'>
+        <robotNamespace/>
+        <pubRate>50</pubRate>
+        <baroTopic>/baro</baroTopic>
+        <baroDriftPaPerSec>0</baroDriftPaPerSec>
+      </plugin>
+      <plugin name='mavlink_interface' filename='libgazebo_mavlink_interface.so'>
+        <robotNamespace/>
+        <imuSubTopic>/imu</imuSubTopic>
+        <magSubTopic>/mag</magSubTopic>
+        <baroSubTopic>/baro</baroSubTopic>
+        <mavlink_addr>INADDR_ANY</mavlink_addr>
+        <mavlink_udp_port>14560</mavlink_udp_port>
+        <mavlink_tcp_port>4560</mavlink_tcp_port>
+        <serialEnabled>0</serialEnabled>
+        <serialDevice>/dev/ttyACM0</serialDevice>
+        <baudRate>921600</baudRate>
+        <qgc_addr>INADDR_ANY</qgc_addr>
+        <qgc_udp_port>14550</qgc_udp_port>
+        <sdk_addr>INADDR_ANY</sdk_addr>
+        <sdk_udp_port>14540</sdk_udp_port>
+        <hil_mode>0</hil_mode>
+        <hil_state_level>0</hil_state_level>
+        <vehicle_is_tailsitter>0</vehicle_is_tailsitter>
+        <send_vision_estimation>0</send_vision_estimation>
+        <send_odometry>1</send_odometry>
+        <enable_lockstep>1</enable_lockstep>
+        <use_tcp>1</use_tcp>
+        <motorSpeedCommandPubTopic>/gazebo/command/motor_speed</motorSpeedCommandPubTopic>
+        <control_channels>
+          <channel name='rotor1'>
+            <input_index>0</input_index>
+            <input_offset>0</input_offset>
+            <input_scaling>1000</input_scaling>
+            <zero_position_disarmed>0</zero_position_disarmed>
+            <zero_position_armed>100</zero_position_armed>
+            <joint_control_type>velocity</joint_control_type>
+          </channel>
+          <channel name='rotor2'>
+            <input_index>1</input_index>
+            <input_offset>0</input_offset>
+            <input_scaling>1000</input_scaling>
+            <zero_position_disarmed>0</zero_position_disarmed>
+            <zero_position_armed>100</zero_position_armed>
+            <joint_control_type>velocity</joint_control_type>
+          </channel>
+          <channel name='rotor3'>
+            <input_index>2</input_index>
+            <input_offset>0</input_offset>
+            <input_scaling>1000</input_scaling>
+            <zero_position_disarmed>0</zero_position_disarmed>
+            <zero_position_armed>100</zero_position_armed>
+            <joint_control_type>velocity</joint_control_type>
+          </channel>
+          <channel name='rotor4'>
+            <input_index>3</input_index>
+            <input_offset>0</input_offset>
+            <input_scaling>1000</input_scaling>
+            <zero_position_disarmed>0</zero_position_disarmed>
+            <zero_position_armed>100</zero_position_armed>
+            <joint_control_type>velocity</joint_control_type>
+          </channel>
+          <channel name='rotor5'>
+            <input_index>4</input_index>
+            <input_offset>1</input_offset>
+            <input_scaling>324.6</input_scaling>
+            <zero_position_disarmed>0</zero_position_disarmed>
+            <zero_position_armed>0</zero_position_armed>
+            <joint_control_type>velocity</joint_control_type>
+            <joint_control_pid>
+              <p>0.1</p>
+              <i>0</i>
+              <d>0</d>
+              <iMax>0.0</iMax>
+              <iMin>0.0</iMin>
+              <cmdMax>2</cmdMax>
+              <cmdMin>-2</cmdMin>
+            </joint_control_pid>
+            <joint_name>zephyr_delta_wing::propeller_joint</joint_name>
+          </channel>
+          <channel name='rotor6'>
+            <input_index>5</input_index>
+            <input_offset>0</input_offset>
+            <input_scaling>0.524</input_scaling>
+            <zero_position_disarmed>0</zero_position_disarmed>
+            <zero_position_armed>0</zero_position_armed>
+            <joint_control_type>position</joint_control_type>
+            <joint_name>zephyr_delta_wing::flap_left_joint</joint_name>
+            <joint_control_pid>
+              <p>10.0</p>
+              <i>0</i>
+              <d>0</d>
+              <iMax>0</iMax>
+              <iMin>0</iMin>
+              <cmdMax>20</cmdMax>
+              <cmdMin>-20</cmdMin>
+            </joint_control_pid>
+          </channel>
+          <channel name='rotor7'>
+            <input_index>6</input_index>
+            <input_offset>0</input_offset>
+            <input_scaling>0.524</input_scaling>
+            <zero_position_disarmed>0</zero_position_disarmed>
+            <zero_position_armed>0</zero_position_armed>
+            <joint_control_type>position</joint_control_type>
+            <joint_name>zephyr_delta_wing::flap_right_joint</joint_name>
+            <joint_control_pid>
+              <p>10.0</p>
+              <i>0</i>
+              <d>0</d>
+              <iMax>0</iMax>
+              <iMin>0</iMin>
+              <cmdMax>20</cmdMax>
+              <cmdMin>-20</cmdMin>
+            </joint_control_pid>
+          </channel>
+          <channel name='rotor8'>
+            <input_index>7</input_index>
+            <input_offset>0</input_offset>
+            <input_scaling>0.524</input_scaling>
+            <zero_position_disarmed>0</zero_position_disarmed>
+            <zero_position_armed>0</zero_position_armed>
+            <joint_control_type>position</joint_control_type>
+          </channel>
+        </control_channels>
+      </plugin>
+      <plugin name='rotors_gazebo_imu_plugin' filename='libgazebo_imu_plugin.so'>
+        <robotNamespace/>
+        <linkName>iris::/imu_link</linkName>
+        <imuTopic>/imu</imuTopic>
+        <gyroscopeNoiseDensity>0.00018665</gyroscopeNoiseDensity>
+        <gyroscopeRandomWalk>3.8785e-05</gyroscopeRandomWalk>
+        <gyroscopeBiasCorrelationTime>1000.0</gyroscopeBiasCorrelationTime>
+        <gyroscopeTurnOnBiasSigma>0.0087</gyroscopeTurnOnBiasSigma>
+        <accelerometerNoiseDensity>0.00186</accelerometerNoiseDensity>
+        <accelerometerRandomWalk>0.006</accelerometerRandomWalk>
+        <accelerometerBiasCorrelationTime>300.0</accelerometerBiasCorrelationTime>
+        <accelerometerTurnOnBiasSigma>0.196</accelerometerTurnOnBiasSigma>
+      </plugin>
+      <frame name='iris::base_joint' attached_to='iris::base_link'>
+        <pose>0 0 0 0 -0 0</pose>
+      </frame>
+      <frame name='iris::base_link_inertia' attached_to='iris::base_joint'/>
+      <frame name='realsense_camera_1::__model__' attached_to='realsense_camera_1::camera_link'>
+        <pose relative_to='__model__'>0.12 0 0 1.57 -0 1.57</pose>
+      </frame>
+      <link name='realsense_camera_1::camera_link'>
+        <inertial>
+          <mass>0.0564</mass>
+          <inertia>
+            <ixx>4.1e-05</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>5.9e-06</iyy>
+            <iyz>0</iyz>
+            <izz>5.9e-06</izz>
           </inertia>
           <pose>0 0 0 0 -0 0</pose>
         </inertial>
-        <gravity>1</gravity>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <gravity>1</gravity>
         <visual name='visual'>
-          <pose>0 0 0 0 -0 0</pose>
           <geometry>
-            <box>
-              <size>0.2 0.2 0.2</size>
-            </box>
+            <mesh>
+              <uri>model://realsense_camera/meshes/realsense_d435.stl</uri>
+            </mesh>
           </geometry>
-          <material>
-            <lighting>1</lighting>
-            <script>
-              <uri>file://media/materials/scripts/gazebo.material</uri>
-              <name>Gazebo/Grey</name>
-            </script>
-            <ambient>1 0 0 1</ambient>
-            <diffuse>1 0 0 1</diffuse>
-            <specular>0 0 0 1</specular>
-            <emissive>0 0 0 1</emissive>
-            <shader type='vertex'>
-              <normal_map>__default__</normal_map>
-            </shader>
-          </material>
-          <cast_shadows>1</cast_shadows>
-          <transparency>0</transparency>
         </visual>
         <collision name='collision'>
-          <laser_retro>0</laser_retro>
-          <max_contacts>10</max_contacts>
           <pose>0 0 0 0 -0 0</pose>
           <geometry>
             <box>
-              <size>0.2 0.2 0.2</size>
+              <size>0.02505 0.09 0.025</size>
             </box>
           </geometry>
           <surface>
@@ -1173,13 +1903,7 @@
                 <slip2>0</slip2>
               </ode>
               <torsional>
-                <coefficient>1</coefficient>
-                <patch_radius>0</patch_radius>
-                <surface_radius>0</surface_radius>
-                <use_patch_radius>1</use_patch_radius>
-                <ode>
-                  <slip>0</slip>
-                </ode>
+                <ode/>
               </torsional>
             </friction>
             <bounce>
@@ -1208,12 +1932,325 @@
               </bullet>
             </contact>
           </surface>
+          <max_contacts>10</max_contacts>
         </collision>
+        <pose relative_to='realsense_camera_1::__model__'>0 0 0 0 -0 0</pose>
         <enable_wind>0</enable_wind>
       </link>
-      <static>1</static>
-      <allow_auto_disable>1</allow_auto_disable>
-      <pose>1.3122 -2.68442 0 0 -0 0</pose>
+      <link name='realsense_camera_1::camera_color_frame'>
+        <pose relative_to='realsense_camera_1::__model__'>0.0325 0 0 3.14 -1.57 1.57</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>0.0015</mass>
+          <inertia>
+            <ixx>1e-06</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1e-06</iyy>
+            <iyz>0</iyz>
+            <izz>1e-06</izz>
+          </inertia>
+        </inertial>
+        <sensor name='color' type='camera'>
+          <camera name='color'>
+            <horizontal_fov>1.571</horizontal_fov>
+            <image>
+              <width>640</width>
+              <height>480</height>
+              <format>RGB_INT8</format>
+            </image>
+            <clip>
+              <near>0.1</near>
+              <far>100</far>
+            </clip>
+            <noise>
+              <type>gaussian</type>
+              <mean>0</mean>
+              <stddev>0.007</stddev>
+            </noise>
+          </camera>
+          <always_on>1</always_on>
+          <update_rate>30</update_rate>
+          <visualize>1</visualize>
+        </sensor>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='realsense_camera_1::camera_color_joint' type='revolute'>
+        <child>realsense_camera_1::camera_color_frame</child>
+        <parent>realsense_camera_1::camera_link</parent>
+        <axis>
+          <xyz expressed_in='realsense_camera_1::__model__'>1 0 0</xyz>
+          <limit>
+            <lower>0</lower>
+            <upper>0</upper>
+            <effort>0</effort>
+            <velocity>0</velocity>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='realsense_camera_1::camera_ired1_frame'>
+        <pose relative_to='realsense_camera_1::__model__'>0.02 0 0 3.14 -1.57 1.57</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>0.0015</mass>
+          <inertia>
+            <ixx>1e-06</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1e-06</iyy>
+            <iyz>0</iyz>
+            <izz>1e-06</izz>
+          </inertia>
+        </inertial>
+        <sensor name='ired1' type='camera'>
+          <camera name='ired1'>
+            <horizontal_fov>1.571</horizontal_fov>
+            <image>
+              <width>640</width>
+              <height>480</height>
+              <format>L_INT8</format>
+            </image>
+            <clip>
+              <near>0.1</near>
+              <far>100</far>
+            </clip>
+            <noise>
+              <type>gaussian</type>
+              <mean>0</mean>
+              <stddev>0.007</stddev>
+            </noise>
+          </camera>
+          <always_on>1</always_on>
+          <update_rate>30</update_rate>
+          <visualize>0</visualize>
+        </sensor>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='realsense_camera_1::camera_ired1_joint' type='revolute'>
+        <child>realsense_camera_1::camera_ired1_frame</child>
+        <parent>realsense_camera_1::camera_link</parent>
+        <axis>
+          <xyz expressed_in='realsense_camera_1::__model__'>1 0 0</xyz>
+          <limit>
+            <lower>0</lower>
+            <upper>0</upper>
+            <effort>0</effort>
+            <velocity>0</velocity>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='realsense_camera_1::camera_ired2_frame'>
+        <pose relative_to='realsense_camera_1::__model__'>-0.03 0 0 3.14 -1.57 1.57</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>0.0015</mass>
+          <inertia>
+            <ixx>1e-06</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1e-06</iyy>
+            <iyz>0</iyz>
+            <izz>1e-06</izz>
+          </inertia>
+        </inertial>
+        <sensor name='ired2' type='camera'>
+          <camera name='ired2'>
+            <horizontal_fov>1.571</horizontal_fov>
+            <image>
+              <width>640</width>
+              <height>480</height>
+              <format>L_INT8</format>
+            </image>
+            <clip>
+              <near>0.1</near>
+              <far>100</far>
+            </clip>
+            <noise>
+              <type>gaussian</type>
+              <mean>0</mean>
+              <stddev>0.007</stddev>
+            </noise>
+          </camera>
+          <always_on>1</always_on>
+          <update_rate>30</update_rate>
+          <visualize>0</visualize>
+        </sensor>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='realsense_camera_1::camera_ired2_joint' type='revolute'>
+        <child>realsense_camera_1::camera_ired2_frame</child>
+        <parent>realsense_camera_1::camera_link</parent>
+        <axis>
+          <xyz expressed_in='realsense_camera_1::__model__'>1 0 0</xyz>
+          <limit>
+            <lower>0</lower>
+            <upper>0</upper>
+            <effort>0</effort>
+            <velocity>0</velocity>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='realsense_camera_1::camera_depth_frame'>
+        <pose relative_to='realsense_camera_1::__model__'>0.0325 0 0 3.14 -1.57 1.57</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>0.0015</mass>
+          <inertia>
+            <ixx>1e-06</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1e-06</iyy>
+            <iyz>0</iyz>
+            <izz>1e-06</izz>
+          </inertia>
+        </inertial>
+        <sensor name='depth' type='depth'>
+          <camera name='depth'>
+            <horizontal_fov>1.571</horizontal_fov>
+            <image>
+              <width>640</width>
+              <height>480</height>
+            </image>
+            <clip>
+              <near>0.1</near>
+              <far>100</far>
+            </clip>
+            <noise>
+              <type>gaussian</type>
+              <mean>0</mean>
+              <stddev>0.007</stddev>
+            </noise>
+          </camera>
+          <always_on>1</always_on>
+          <update_rate>30</update_rate>
+          <visualize>0</visualize>
+        </sensor>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='realsense_camera_1::camera_depth_joint' type='revolute'>
+        <child>realsense_camera_1::camera_depth_frame</child>
+        <parent>realsense_camera_1::camera_link</parent>
+        <axis>
+          <xyz expressed_in='realsense_camera_1::__model__'>1 0 0</xyz>
+          <limit>
+            <lower>0</lower>
+            <upper>0</upper>
+            <effort>0</effort>
+            <velocity>0</velocity>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <plugin name='d435i' filename='librealsense_gazebo_plugin.so'>
+        <depthUpdateRate>30.0</depthUpdateRate>
+        <colorUpdateRate>30.0</colorUpdateRate>
+        <infraredUpdateRate>15.0</infraredUpdateRate>
+        <depthTopicName>depth/image_raw</depthTopicName>
+        <depthCameraInfoTopicName>depth/camera_info</depthCameraInfoTopicName>
+        <colorTopicName>color/image_raw</colorTopicName>
+        <colorCameraInfoTopicName>color/camera_info</colorCameraInfoTopicName>
+        <infrared1TopicName>infra1/image_raw</infrared1TopicName>
+        <infrared1CameraInfoTopicName>infra1/camera_info</infrared1CameraInfoTopicName>
+        <infrared2TopicName>infra2/image_raw</infrared2TopicName>
+        <infrared2CameraInfoTopicName>infra2/camera_info</infrared2CameraInfoTopicName>
+        <colorOpticalframeName>realsense_camera_1::camera_color_frame</colorOpticalframeName>
+        <depthOpticalframeName>realsense_camera_1::camera_depth_frame</depthOpticalframeName>
+        <infrared1OpticalframeName>realsense_camera_1::camera_ired1_frame</infrared1OpticalframeName>
+        <infrared2OpticalframeName>realsense_camera_1::camera_ired2_frame</infrared2OpticalframeName>
+        <rangeMinDepth>0.2</rangeMinDepth>
+        <rangeMaxDepth>10.0</rangeMaxDepth>
+        <pointCloud>0</pointCloud>
+        <pointCloudTopicName>depth/color/points</pointCloudTopicName>
+        <pointCloudCutoff>0.25</pointCloudCutoff>
+        <pointCloudCutoffMax>9.0</pointCloudCutoffMax>
+      </plugin>
+      <joint name='realsense_camera_joint1' type='fixed'>
+        <child>realsense_camera_1::camera_link</child>
+        <parent>iris::base_link</parent>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <limit>
+            <upper>0</upper>
+            <lower>0</lower>
+          </limit>
+        </axis>
+      </joint>
+      <pose>0 0 0.8 0 0 -1.57</pose>
+    </model>
+    <model name='hatchback_red'>
+      <static>0</static>
+      <link name='link'>
+        <collision name='collision'>
+          <pose>0 0 0 0 -0 1.5708</pose>
+          <geometry>
+            <mesh>
+              <scale>0.0254 0.0254 0.0254</scale>
+              <uri>model://hatchback_red/meshes/hatchback.obj</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose>0 0 0 0 -0 1.5708</pose>
+          <geometry>
+            <mesh>
+              <scale>0.0254 0.0254 0.0254</scale>
+              <uri>model://hatchback_red/meshes/hatchback.obj</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+          <mass>1</mass>
+        </inertial>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>0.998273 -5.39767 0 0 -0 0</pose>
     </model>
   </world>
 </sdf>

@@ -321,7 +321,7 @@
     <plugin name="d435i" filename="librealsense_gazebo_plugin.so">
        <depthUpdateRate>30.0</depthUpdateRate>
        <colorUpdateRate>30.0</colorUpdateRate>
-       <infraredUpdateRate>30.0</infraredUpdateRate>
+       <infraredUpdateRate>15.0</infraredUpdateRate>
        <depthTopicName>depth/image_raw</depthTopicName>
        <depthCameraInfoTopicName>depth/camera_info</depthCameraInfoTopicName>
        <colorTopicName>color/image_raw</colorTopicName>
